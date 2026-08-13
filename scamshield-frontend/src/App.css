@@ -1,0 +1,1051 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #070b14;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 72px;
+  width: 100%;
+  padding: 0 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #0b1020;
+  border-bottom: 1px solid #202a3d;
+
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+
+  color: #aeb8cc;
+  font-size: 15px;
+  font-weight: 500;
+
+  padding: 8px 2px;
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links .login-btn {
+  background: #704cff;
+  color: white !important;
+
+  padding: 11px 22px;
+  border-radius: 9px;
+
+  font-weight: 600;
+}
+
+.nav-links .login-btn:hover {
+  background: #815fff;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.home-page {
+  min-height: calc(100vh - 72px);
+}
+
+.hero-section {
+  min-height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 80px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #20295a 0%,
+      #0b1020 45%,
+      #070b14 75%
+    );
+
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 900px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.tagline {
+  color: #9b86ff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin: 22px 0;
+}
+
+.hero-content h1 span {
+  color: #7d5cff;
+}
+
+.description {
+  max-width: 700px;
+  margin: auto;
+
+  color: #aab5ca;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  max-width: 700px;
+  margin: 35px auto 15px;
+  padding: 6px;
+
+  display: flex;
+
+  background: #111827;
+  border: 1px solid #303a50;
+  border-radius: 12px;
+
+  position: relative;
+  z-index: 10;
+}
+
+.search-box input {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: white;
+
+  padding: 15px;
+  font-size: 15px;
+}
+
+.search-box button {
+  border: none;
+  border-radius: 8px;
+
+  background: #704cff;
+  color: white;
+
+  padding: 0 24px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  position: relative;
+  z-index: 20;
+}
+
+.small-text {
+  color: #66738c;
+  font-size: 13px;
+}
+
+/* =========================
+   HOME CHECK BUTTON
+========================= */
+
+.check-now-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 26px;
+
+  background: #704cff;
+  color: white;
+
+  border-radius: 8px;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.check-now-btn:hover {
+  background: #815fff;
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats {
+  max-width: 1100px;
+  margin: -50px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+
+  padding: 0 20px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card {
+  background: #111827;
+  border: 1px solid #263147;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: #704cff;
+  box-shadow: 0 10px 25px rgba(112, 76, 255, 0.25);
+}
+
+.stat-card h2 {
+  color: #947cff;
+  margin: 0;
+  font-size: 30px;
+}
+
+.stat-card p {
+  color: #8793aa;
+  margin: 8px 0 0;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+  padding: 100px 7%;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.categories > p {
+  color: #8793aa;
+  margin-bottom: 45px;
+}
+
+.category-container {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  background: #111827;
+  border: 1px solid #263147;
+  border-radius: 16px;
+  padding: 30px 22px;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-7px);
+  border-color: #704cff;
+  box-shadow: 0 12px 30px rgba(112, 76, 255, 0.3);
+}
+
+.category-icon {
+  font-size: 38px;
+}
+
+.category-card h3 {
+  font-size: 20px;
+}
+
+.category-card p {
+  color: #8793aa;
+  line-height: 1.6;
+}
+
+.category-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 12px;
+  padding: 10px 15px;
+
+  background: transparent;
+  color: #a18fff;
+
+  border: 1px solid #704cff;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-button:hover {
+  background: #704cff;
+  color: white;
+}
+
+/* =========================
+   COMMON PAGE
+========================= */
+
+.page-container {
+  min-height: calc(100vh - 72px);
+
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #192044 0%,
+      #070b14 55%
+    );
+
+  position: relative;
+  z-index: 1;
+}
+
+.page-container h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.page-description {
+  color: #8e9ab0;
+  font-size: 17px;
+  margin-bottom: 45px;
+}
+
+/* =========================
+   CHECK SCAM
+========================= */
+
+.check-card {
+  max-width: 750px;
+  margin: auto;
+
+  background: #111827;
+
+  border: 1px solid #29344b;
+  border-radius: 18px;
+
+  padding: 40px;
+
+  position: relative;
+  z-index: 5;
+}
+
+.check-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  margin-bottom: 30px;
+}
+
+.check-options button {
+  padding: 15px;
+
+  background: #192238;
+  color: #c4cce0;
+
+  border: 1px solid #303b53;
+  border-radius: 9px;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  position: relative;
+  z-index: 10;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.check-options button:hover {
+  border-color: #704cff;
+  color: white;
+}
+
+.check-options button.active {
+  background: #704cff;
+  border-color: #947cff;
+  color: white;
+  box-shadow: 0 4px 15px rgba(112, 76, 255, 0.4);
+}
+
+.samples-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 20px;
+}
+
+.sample-chip {
+  background: rgba(112, 76, 255, 0.15);
+  border: 1px dashed #704cff;
+  color: #c0b3ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sample-chip:hover {
+  background: #704cff;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.check-form input {
+  width: 100%;
+
+  padding: 16px;
+
+  background: #080d18;
+  color: white;
+
+  border: 1px solid #303b53;
+  border-radius: 9px;
+
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.check-form input:focus {
+  border-color: #704cff;
+  box-shadow: 0 0 10px rgba(112, 76, 255, 0.3);
+}
+
+.analyze-btn {
+  width: 100%;
+
+  margin-top: 15px;
+  padding: 15px;
+
+  background: linear-gradient(135deg, #704cff, #512bd4);
+  color: white;
+
+  border: none;
+  border-radius: 9px;
+
+  font-weight: bold;
+  font-size: 16px;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  position: relative;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(112, 76, 255, 0.3);
+}
+
+.analyze-btn:hover {
+  background: linear-gradient(135deg, #815fff, #6038eb);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(112, 76, 255, 0.5);
+}
+
+/* =========================
+   ANALYSIS RESULT CARD
+========================= */
+
+.result-card-container {
+  margin-top: 25px;
+  padding: 24px;
+  background: #0b1222;
+  border-radius: 14px;
+  text-align: left;
+  border: 1px solid #283756;
+  animation: fadeIn 0.3s ease;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge-risk-critical {
+  background: rgba(255, 63, 85, 0.2);
+  border: 1px solid #ff3f55;
+  color: #ff5266;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.badge-risk-high {
+  background: rgba(255, 102, 120, 0.2);
+  border: 1px solid #ff6678;
+  color: #ff7787;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.badge-risk-medium {
+  background: rgba(255, 179, 0, 0.2);
+  border: 1px solid #ffb300;
+  color: #ffc107;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.badge-risk-safe {
+  background: rgba(46, 204, 113, 0.2);
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.risk-meter-bg {
+  width: 100%;
+  height: 10px;
+  background: #19243d;
+  border-radius: 5px;
+  margin: 12px 0 20px;
+  overflow: hidden;
+}
+
+.risk-meter-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.risk-score-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #aeb9ce;
+}
+
+.result-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #8c9cb8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 18px 0 10px;
+}
+
+.indicators-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.indicators-list li {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: #111a2f;
+  border-left: 3px solid #704cff;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #d1d9e6;
+}
+
+.indicators-list li.indicator-danger {
+  border-left-color: #ff3f55;
+  background: rgba(255, 63, 85, 0.08);
+}
+
+.indicators-list li.indicator-warning {
+  border-left-color: #ffb300;
+  background: rgba(255, 179, 0, 0.08);
+}
+
+.indicators-list li.indicator-safe {
+  border-left-color: #2ecc71;
+  background: rgba(46, 204, 113, 0.08);
+}
+
+.action-buttons-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.check-again-btn {
+  flex: 1;
+  padding: 13px 20px;
+  background: #1d2842;
+  color: white;
+  border: 1px solid #3c4d75;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.check-again-btn:hover {
+  background: #28375b;
+  border-color: #704cff;
+  color: white;
+}
+
+.report-this-btn {
+  flex: 1;
+  padding: 13px 20px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.report-this-btn:hover {
+  background: #ef4444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   REPORT SCAM
+========================= */
+
+.report-card {
+  max-width: 650px;
+  margin: auto;
+
+  background: #111827;
+
+  border: 1px solid #29344b;
+  border-radius: 18px;
+
+  padding: 40px;
+
+  text-align: left;
+
+  position: relative;
+  z-index: 5;
+}
+
+.report-card label {
+  display: block;
+
+  margin: 18px 0 7px;
+
+  color: #bdc6d8;
+}
+
+.report-card input,
+.report-card select,
+.report-card textarea {
+  width: 100%;
+
+  padding: 14px;
+
+  background: #080d18;
+  color: white;
+
+  border: 1px solid #303b53;
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+
+  margin-top: 25px;
+  padding: 15px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #704cff;
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+  pointer-events: auto;
+}
+/* =========================
+   REPORTS
+========================= */
+
+.reports-container {
+  max-width: 1000px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  text-align: left;
+}
+
+.scam-report {
+  background: #111827;
+
+  border: 1px solid #29344b;
+  border-radius: 16px;
+
+  padding: 25px;
+}
+
+.scam-report h2 {
+  margin: 12px 0;
+}
+
+.scam-report p {
+  color: #8d98ad;
+  line-height: 1.6;
+}
+
+.high-risk {
+  color: #ff6678;
+  font-weight: bold;
+}
+
+.critical-risk {
+  color: #ff3f55;
+  font-weight: bold;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.report-type {
+  color: #a996ff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.report-footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  padding-top: 15px;
+
+  border-top: 1px solid #29344b;
+
+  color: #737f96;
+  font-size: 13px;
+}
+
+.view-button {
+  margin-top: 20px;
+  padding: 10px 16px;
+
+  background: transparent;
+  color: #9b86ff;
+
+  border: 1px solid #704cff;
+  border-radius: 7px;
+
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.view-button:hover {
+  background: #704cff;
+  color: white;
+}
+
+/* =========================
+   LOGIN / REGISTER
+========================= */
+
+.auth-page {
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #20295a 0%,
+      #070b14 60%
+    );
+}
+
+.auth-card {
+  width: 420px;
+
+  background: #111827;
+
+  border: 1px solid #29344b;
+  border-radius: 18px;
+
+  padding: 40px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+
+  position: relative;
+  z-index: 5;
+}
+
+.auth-icon {
+  text-align: center;
+  font-size: 45px;
+}
+
+.auth-card h1 {
+  text-align: center;
+  margin: 15px 0 8px;
+}
+
+.auth-card > p {
+  text-align: center;
+  color: #8d98ad;
+}
+
+.auth-card label {
+  display: block;
+
+  margin: 18px 0 7px;
+
+  color: #c5ccda;
+}
+
+.auth-card input {
+  width: 100%;
+
+  padding: 14px;
+
+  background: #080d18;
+  color: white;
+
+  border: 1px solid #303b53;
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.auth-button {
+  width: 100%;
+
+  margin-top: 25px;
+  padding: 14px;
+
+  background: #704cff;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.auth-link {
+  margin-top: 20px !important;
+}
+
+.auth-link a {
+  color: #9b86ff;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 45px;
+  text-align: center;
+
+  border-top: 1px solid #202a3d;
+  background: #060911;
+}
+
+footer p {
+  color: #727e96;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a:not(.login-btn) {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reports-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats,
+  .category-container {
+    grid-template-columns: 1fr;
+  }
+
+  .check-options {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-box button {
+    padding: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 35px;
+  }
+
+  .auth-card {
+    width: 100%;
+  }
+}
